@@ -5,5 +5,7 @@
 <configuration> 
 	<typeAliases>
 		<typeAlias alias="coffeeBean" type="com.spring.starbucks.beans.Coffee" />
+		<typeAlias alias="loginBean" type="com.spring.starbucks.beans.LoginBean" />
+		<typeAlias alias="userBean" type="com.spring.starbucks.beans.UserBean" />
 	</typeAliases>
 </configuration>

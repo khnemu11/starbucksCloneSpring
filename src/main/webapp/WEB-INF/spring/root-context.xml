@@ -10,45 +10,50 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">  
-
-    
+		
 	<context:component-scan base-package="com.spring.test.dao" />
-	
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">    
-	<property name="prefix" value="/WEB-INF/jsp/"></property>    
-	<property name="suffix" value=".jsp"></property>    
-	</bean>    
-	
+
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>
 
 	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    
-	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    
-	<property name="url" value="jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_93eb5d7b9e41d59?reconnect=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>    
-	<property name="username" value="bbcd4d820494e1"></property>    
-	<property name="password" value="9efbe081"></property>    
-	</bean>    
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    
+		<property name="url" value="jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_93eb5d7b9e41d59?reconnect=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>    
+		<property name="username" value="bbcd4d820494e1"></property>    
+		<property name="password" value="9efbe081"></property>    
+	</bean>
+	
 	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">    
 		<property name="dataSource" ref="ds"></property>    
-	</bean>      
+	</bean> 
+	
 	<!-- sqlSessionFactory --> 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds" />
-		<property name="configLocation" value="classpath:/mybatis/coffeeBean_config.xml" />
-		<property name="mapperLocations" value="classpath:/mybatis/coffeeBean_mapper.xml" />
+		<property name="configLocation" value="classpath:/mybatis/config/myBatis_config.xml" />
+		<property name="mapperLocations" value="classpath:/mybatis/mapper/*.xml" />
 	</bean>
 	
 	<!-- SqlSessionTemplate -->
 	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	<bean id="dao" class="com.spring.starbucks.daos.CoffeeDao">    
+	
+	<!-- Dao -->
+	<bean id="coffeeDao" class="com.spring.starbucks.daos.CoffeeDao">    
 		<property name="session" ref="sqlSessoinTemplate"></property>    
 	</bean>
+	<bean id="loginDao" class="com.spring.starbucks.daos.LoginDao">    
+		<property name="session" ref="sqlSessoinTemplate"></property>    
+	</bean>
+	
+	
+	<!-- Service -->
 	<bean id="crudService" class="com.spring.starbucks.daos.CrudServiceImpl">    
-		<property name="dao" ref="dao"></property>    
+		<property name="dao" ref="coffeeDao"></property>    
 	</bean>  
-
-
+	<bean id="loginService" class="com.spring.starbucks.daos.LoginServiceImpl">    
+		<property name="dao" ref="loginDao"></property>    
+	</bean>  
 </beans>

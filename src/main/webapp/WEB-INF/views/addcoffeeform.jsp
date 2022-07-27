@@ -20,6 +20,7 @@
 	<div class="container">
 		<div class="container-name">
 				<h2>스타벅스 원두</h2>
+				<h2>${test.name}</h2>
 		</div>
 			<div class="context-top">
 				<div class="coffee-img">

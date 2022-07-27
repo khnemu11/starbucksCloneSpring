@@ -18,7 +18,7 @@
             <div class="center">
                 <div class="header-content">
                     <div class="header-left">
-                        <a href="/springStarbucks/"><img class="logo" src="resources/img/logo.png"></a>
+                        <a href="index"><img class="logo" src="resources/img/logo.png"></a>
                     </div>
                     <div class="header-right">
                         <div class="header-right-upper">
@@ -49,7 +49,7 @@
                             <li>
                                 <ul>
                                     <h2><a href="#">커피</a></h2>
-                                    <li><a href="/springStarbucks/">스타벅스 원두</a></li>
+                                    <li><a href="index">스타벅스 원두</a></li>
                                     <li><a href="#">스타벅스 비아</a></li>
                                     <li><a href="#">스타벅스앳홈 by 캡슐</a></li>
                                 </ul>

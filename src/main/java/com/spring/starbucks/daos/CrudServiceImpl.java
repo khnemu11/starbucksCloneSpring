@@ -13,7 +13,7 @@ import com.spring.starbucks.beans.Coffee;
 
 @Service
 public class CrudServiceImpl implements CrudService{
-	@Resource(name="dao")
+	@Resource(name="coffeeDao")
 	CoffeeDao dao;
 	
 	public void setDao(CoffeeDao dao) {
@@ -59,9 +59,8 @@ public class CrudServiceImpl implements CrudService{
 		
 		return status;
 	}
-
-	
-	  @Override public int edit(Coffee c,String directory) {
+	  @Override 
+	  public int edit(Coffee c,String directory) {
 		  System.out.println("edit "+c.getName_kr()+" start");
 			int status = 0;
 			try {

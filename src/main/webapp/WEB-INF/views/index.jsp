@@ -23,6 +23,7 @@
 	<div class="container">
 		<div class="container-name">
 		<h2>커피</h2>
+		<c:out value="${test}" default="foo" />
 		<span class="title-home">
 			<span class="material-symbols-outlined home">home</span>&nbsp;
 			<span> COFFEE > 커피</span>

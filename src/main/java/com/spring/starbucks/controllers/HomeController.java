@@ -28,6 +28,8 @@ import com.spring.starbucks.daos.CrudService;
 public class HomeController {
 	@Resource(name = "crudService")
 	CrudService crudService;
+	int test = 2;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**
@@ -72,7 +74,7 @@ public class HomeController {
 		c.setFile(file);  
 		 
 		crudService.save(c,directory);
-		 
+		
 		return "addcoffeeform";
 	}
 	@RequestMapping(value = "/editCoffeeBean", method = RequestMethod.POST)
@@ -120,6 +122,7 @@ public class HomeController {
 		return "editCoffeeBeanForm";
 	}
 	
+	
 	@RequestMapping(value = "/coffeeBeanDetail", method = RequestMethod.GET)
 	public String detailCoffeeBean(Locale locale, Model model,HttpServletRequest request) throws UnsupportedEncodingException {
 		int seq = Integer.valueOf(request.getParameter("seq"));
@@ -148,4 +151,11 @@ public class HomeController {
 		this.crudService = crudService;
 	}
 
+	public int getTest() {
+		return test;
+	}
+
+	public void setTest(int test) {
+		this.test = test;
+	}
 }

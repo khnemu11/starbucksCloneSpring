@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.starbucks.beans.Coffee;
 
-@Repository("dao")
+@Repository("coffeeDao")
 public class CoffeeDao {
 	
 	@Resource(name="sqlSessoinTemplate")
