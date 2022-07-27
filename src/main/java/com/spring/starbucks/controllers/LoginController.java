@@ -49,12 +49,13 @@ public class LoginController {
 		System.out.println(login.toString());
 		UserBean result = loginService.login(login);
 		if(result != null) {
+			System.out.println("login success!");
 			if(session.getAttribute("login")!=null) {
 				session.removeAttribute("login");
 			}
 			session.setAttribute("login", result);
 		}
-		
+		System.out.println("login finish");
 		return result;
 	}
 	@RequestMapping(value = {"/registerForm"}, method = RequestMethod.GET)

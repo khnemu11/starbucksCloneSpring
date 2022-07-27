@@ -22,7 +22,15 @@
                     </div>
                     <div class="header-right">
                         <div class="header-right-upper">
-                            <a href="loginForm" class="right-upper-text">Sign in</a>
+                        	<c:set var="name" value="${loginInfo.name}"/>
+                        	<c:choose>
+                        		<c:when test="${empty name}">
+                        			<a href="loginForm" class="right-upper-text">Sign in</a>	
+                        		</c:when>
+                        		<c:otherwise>
+                        			<a href="loginForm" class="right-upper-text">Sign out</a>	
+								</c:otherwise>
+							</c:choose>
                             <a href="#" class="right-upper-text">My Starbuks</a>
                             <a href="#" class="right-upper-text">Customer Service & Ideas</a>
                             <a href="#" class="right-upper-text">Find a Store</a>

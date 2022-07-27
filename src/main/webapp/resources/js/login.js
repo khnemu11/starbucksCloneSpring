@@ -11,16 +11,26 @@ function login(form){
 				var name = result.name;
 				var msg = name + "님 어서오세요";
 				alert(msg);
+				location.href="./index";
 			}
 			else{
 				var msg = "로그인 실패!";
 				alert(msg);
 			}
 			
-			location.herf="./index";
+			
 		},
 		error: function(xhr, status, error){
-				alert(error);
+				alert("로그인 로드 실패");
 		}
 	});
 }
+
+$(".save").on('click',function(){
+	if($(".check").css('background-color')=='rgb(0, 128, 0)'){
+		$(".check").css('background-color','grey');
+	}
+	else{
+		$(".check").css('background-color','green');
+	}
+});

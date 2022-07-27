@@ -10,16 +10,16 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.spring.starbucks.beans.UserBean;
 
-public class LoginInfoInterceptor extends HandlerInterceptorAdapter{
+public class LoginInfoInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			@Nullable ModelAndView modelAndView) throws Exception {
-			HttpSession session = request.getSession();
-			UserBean user = new UserBean();
-			if(session.getAttribute("login") != null) {
-				user = (UserBean)session.getAttribute("login");
-			}
-			modelAndView.addObject("test", user);
-			
+		
+		 	HttpSession session = request.getSession(); 
+		 	UserBean user = new UserBean();
+		 	if(session.getAttribute("login") != null) {
+		 		user = (UserBean)session.getAttribute("login"); 
+		 	} 
+		 	modelAndView.addObject("loginInfo", user);
 	}
 }

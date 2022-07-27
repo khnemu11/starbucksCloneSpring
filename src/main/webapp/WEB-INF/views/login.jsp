@@ -25,8 +25,8 @@
 			</div>
 			<form action="login" method="post" accept-charset="UTF-8" onsubmit="return false;">
 			<div class="login-mid"> 
-				<input type="text" name="id"/>
-				<input type="password" name="password"/>
+				<input type="text" name="id" placeholder="아이디를 입력해 주세요."/>
+				<input type="password" name="password" placeholder="비밀번호를 입력해 주세요."/>
 				<div class="save">
 					<span class="material-symbols-outlined check">check</span>
 					<h3>아이디 저장</h3>
