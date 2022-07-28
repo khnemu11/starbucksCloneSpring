@@ -62,20 +62,20 @@
                             </ul>
                         </li>
                     </ul>
-                    <img class="footer-logo" src="resources/img/footer_logo.png">
+                    <img class="footer-logo" src="resources/img/footer/footer_logo.png">
                 </div>
                 <div class="footer-menu footer-middle">
                     <div>
-                        <img src="resources/img/footer_award23.jpg"></img>
-                        <img src="resources/img/footer_award24.jpg"></img>
-                        <img src="resources/img/footer_award25.jpg"></img>
+                        <img src="resources/img/footer/footer_award23.jpg"></img>
+                        <img src="resources/img/footer/footer_award24.jpg"></img>
+                        <img src="resources/img/footer/footer_award25.jpg"></img>
                     </div>
                     <br>
                     <div></div>
                     <div>
-                        <img src="resources/img/footer_award26.jpg"></img>
-                        <img src="resources/img/footer_award27.jpg"></img>
-                        <img src="resources/img/footer_award28.jpg"></img>
+                        <img src="resources/img/footer/footer_award26.jpg"></img>
+                        <img src="resources/img/footer/footer_award27.jpg"></img>
+                        <img src="resources/img/footer/footer_award28.jpg"></img>
                     </div>
                 </div>
                 <div class="footer-menu footer-bottom">

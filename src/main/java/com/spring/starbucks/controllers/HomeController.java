@@ -46,7 +46,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/addcoffeeform", method = RequestMethod.GET)
 	public String addCoffeeForm(Locale locale, Model model) {
-		return "addcoffeeform";
+		return "coffeeBean/addcoffeeform";
 	}
 
 	@RequestMapping(value = "/addcoffee", method = RequestMethod.POST)
@@ -75,7 +75,7 @@ public class HomeController {
 		 
 		crudService.save(c,directory);
 		
-		return "addcoffeeform";
+		return "coffeeBean/addcoffeeform";
 	}
 	@RequestMapping(value = "/editCoffeeBean", method = RequestMethod.POST)
 	public String editCoffeeBean(Locale locale,Model model, MultipartHttpServletRequest request) throws UnsupportedEncodingException {
@@ -119,7 +119,7 @@ public class HomeController {
 		
 		model.addAttribute("coffee",coffee);
 		
-		return "editCoffeeBeanForm";
+		return "coffeeBean/editCoffeeBeanForm";
 	}
 	
 	
@@ -131,7 +131,7 @@ public class HomeController {
 		
 		model.addAttribute("coffee",coffee);
 
-		return "coffeeBeanDetail";
+		return "coffeeBean/coffeeBeanDetail";
 	}
 	
 	@RequestMapping(value = "/deleteCoffeeBean", method = RequestMethod.GET)

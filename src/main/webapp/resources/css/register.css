@@ -174,3 +174,15 @@ input[type="radio"]:checked+.btn{
 .w-95{
 	width:95%;
 }
+.ymd-subtext{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.ymd{
+	padding-bottom:0px;
+}
+.phone-wrapper .w-88{
+	display:flex;
+	flex-direction:column;
+	
+}

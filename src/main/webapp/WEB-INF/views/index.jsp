@@ -18,7 +18,7 @@
         <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="./common/header.jsp"></jsp:include>
 	<main class="container-wrapper">
 	<div class="container">
 		<div class="container-name">
@@ -116,7 +116,7 @@
 		</div>
 	</div>
 	</main>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="./common/footer.jsp"></jsp:include>
 	 <script src="resources/js/menu.js"></script>
 </body>
 

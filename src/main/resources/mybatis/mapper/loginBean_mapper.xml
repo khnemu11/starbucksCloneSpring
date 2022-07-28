@@ -13,8 +13,9 @@
 								id=#{id} 
 	</select>
 	<insert id="insertUser" parameterType = "UserBean">
-		insert into user (id, password, name, year, month, day) 
+		insert into user (	id, password, name, year, month, day, phone, sex, nickname	) 
 						 values	
-						 (#{id},#{password},#{name},#{year},#{month},#{day})
+						 (	#{id},#{password},#{name},#{year},#{month},
+						 #{day},#{phone},#{sex},#{nickname}	)
 	</insert>
 </mapper>

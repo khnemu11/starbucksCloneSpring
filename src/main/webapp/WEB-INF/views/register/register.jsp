@@ -16,7 +16,7 @@
        
 </head>
 <body>
-<jsp:include page="./header.jsp"></jsp:include>
+<jsp:include page="../common/header.jsp"></jsp:include>
 
 <main class="container-wrapper">
 	<div class="container">
@@ -56,9 +56,9 @@
 						</div>
 					</div>
 					<div class="ymd-wrapper bottom-div">
-						<div class="w-88">
+						<div class="w-88 ymd">
 							<h3>생년월일 (필수)</h3>
-							<div class="inline">
+							<div class="inline" id="ymd">
 								<select class="form-select" name="year">
 							  <option selected value="0">생년</option>
 							  <c:forEach var="i" begin="1900" end="2022">
@@ -82,6 +82,8 @@
 							 	 <option value="l">음</option>
 							</select>
 							</div>
+						</div>
+						<div class="w-88 ymd-subtext">
 							<p>회원가입 완료 후 스타벅스 카드를 등록하시면 생일 무료음료 쿠폰이 발행됩니다.</p>
 						</div>			
 					</div>
@@ -114,7 +116,7 @@
 </main>
 
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../common/footer.jsp"></jsp:include>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(document).ready(function(){

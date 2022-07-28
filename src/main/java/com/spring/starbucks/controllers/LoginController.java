@@ -41,7 +41,7 @@ public class LoginController {
 	@RequestMapping(value = {"/loginForm"}, method = RequestMethod.GET)
 	public String loginForm(Locale locale, Model model) {
 		
-		return "login";
+		return "login/login";
 	}
 	@RequestMapping(value = {"/login"}, method = RequestMethod.POST)
 	@ResponseBody
@@ -71,18 +71,18 @@ public class LoginController {
 	@RequestMapping(value = {"/registerForm"}, method = RequestMethod.GET)
 	public String registerForm(Locale locale, Model model) {
 
-		return "register";
+		return "register/register";
 	}
 	@RequestMapping(value = {"/register"}, method = RequestMethod.POST)
 	public String register(Locale locale, Model model, UserBean user) {
 		String result = loginService.register(user);
 		
 		if(result.equals("success")) {
-			return "registerSuccess";
+			return "register/registerSuccess";
 		}
 		else {
 			model.addAttribute("error", result);
-			return "register";
+			return "register/register";
 		}
 	}
 	@RequestMapping(value = {"/logout"}, method = RequestMethod.GET)
