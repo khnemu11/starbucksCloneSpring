@@ -1,5 +1,7 @@
 package com.spring.starbucks.daos;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.spring.starbucks.beans.LoginBean;
@@ -40,4 +42,8 @@ public class LoginServiceImpl implements LoginService{
 		}
 	}
 
+	@Override
+	public int idCheck(UserBean user) {
+		return dao.selectUserId(user);
+	}
 }

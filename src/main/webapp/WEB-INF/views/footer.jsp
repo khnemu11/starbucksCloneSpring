@@ -101,7 +101,9 @@
                     </div>
                     <div class="footer-bottom-last">
                         ⓒ 2022 Starbucks Coffee Company. All Rights Reserved.
+                        <br>공부를 위해 클론 코딩한 사이트 입니다.
                     </div>
+
                 </div>
             </div>
         </footer>

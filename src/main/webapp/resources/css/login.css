@@ -124,6 +124,7 @@ h2{
 }
 .container h2{
 	padding-bottom:20px;
+	font-weight:normal;
 }
 .submit:hover{
 	background-color : rgba(0,102,51);

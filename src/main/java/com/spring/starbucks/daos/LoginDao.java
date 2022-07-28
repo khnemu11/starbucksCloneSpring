@@ -1,6 +1,8 @@
 package com.spring.starbucks.daos;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -27,5 +29,8 @@ public class LoginDao {
 	}
 	public int selectUserId(UserBean l) {
 		return session.selectOne("loginBean_mapper.selectUserId", l);
+	}
+	public List<String> selectUserIdList() {
+		return session.selectList("loginBean_mapper.selectUserIdList");
 	}
 }

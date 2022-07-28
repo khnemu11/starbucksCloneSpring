@@ -9,7 +9,7 @@ function login(form){
 		success : function(result){
 			if(result){
 				var name = result.name;
-				var msg = name + "님 어서오세요";
+				var msg = name + "님 환영합니다.";
 				alert(msg);
 				location.href="./index";
 			}

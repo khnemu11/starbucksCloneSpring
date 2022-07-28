@@ -1,5 +1,6 @@
 header{
     background-color:#f6f5ef;
+    z-index:10;
 }
 ul{
     padding-inline-start: 13px;

@@ -58,6 +58,16 @@ public class LoginController {
 		System.out.println("login finish");
 		return result;
 	}
+	@RequestMapping(value = {"/idCheck"}, method = RequestMethod.GET)
+	@ResponseBody
+	public String idCheck(Locale locale, Model model, HttpSession session ,HttpServletRequest request) {
+		UserBean user = new UserBean();
+		user.setId(request.getParameter("id"));
+		System.out.println("will be found id is "+user.getId());
+		int result = loginService.idCheck(user);
+		
+		return String.valueOf(result);
+	}
 	@RequestMapping(value = {"/registerForm"}, method = RequestMethod.GET)
 	public String registerForm(Locale locale, Model model) {
 
@@ -74,5 +84,13 @@ public class LoginController {
 			model.addAttribute("error", result);
 			return "register";
 		}
+	}
+	@RequestMapping(value = {"/logout"}, method = RequestMethod.GET)
+	public String logout(Locale locale, Model model,HttpSession session) {
+		session.removeAttribute("login");
+		
+		
+		return "redirect:index";
+
 	}
 }

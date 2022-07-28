@@ -10,7 +10,7 @@
 	   <meta charset="UTF-8">
 	   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>커피 | Starbucks Korea</title>
-         <link href="./img/logo.png" rel="shortcut icon" type="image/x-icon">
+        <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="resources/css/header.css">
         <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
         <link rel="stylesheet" type="text/css" href="resources/css/coffeeBeanList.css">

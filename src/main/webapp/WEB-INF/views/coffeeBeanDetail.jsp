@@ -7,7 +7,8 @@
 <html>
 <head>
 	   <meta charset="UTF-8">
-        <title>Starbucks</title>
+        <title>${coffee.name_kr} | Starbucks Korea</title>
+        <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="resources/css/coffeeBeanDetail.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -21,11 +21,4 @@ public class LoginAuthenticationInterceptor extends HandlerInterceptorAdapter{
 				response.sendRedirect("/springStarbucks/loginForm");
 				return false;
 	}
-	@Override
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			@Nullable ModelAndView modelAndView) throws Exception {
-			HttpSession session = request.getSession();
-			UserBean user = (UserBean)session.getAttribute("login");
-			modelAndView.addObject("test", user);
-	}
 }
