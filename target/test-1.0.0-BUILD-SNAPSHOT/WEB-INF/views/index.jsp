@@ -10,7 +10,7 @@
 	   <meta charset="UTF-8">
 	   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>커피 | Starbucks Korea</title>
-         <link href="./img/logo.png" rel="shortcut icon" type="image/x-icon">
+        <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="resources/css/header.css">
         <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
         <link rel="stylesheet" type="text/css" href="resources/css/coffeeBeanList.css">
@@ -18,11 +18,12 @@
         <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="./common/header.jsp"></jsp:include>
 	<main class="container-wrapper">
 	<div class="container">
 		<div class="container-name">
 		<h2>커피</h2>
+		<%-- <c:out value="${test}" default="foo" /> --%>
 		<span class="title-home">
 			<span class="material-symbols-outlined home">home</span>&nbsp;
 			<span> COFFEE > 커피</span>
@@ -115,8 +116,9 @@
 		</div>
 	</div>
 	</main>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="./common/footer.jsp"></jsp:include>
 	 <script src="resources/js/menu.js"></script>
+	 <script src="https://apis.google.com/js/api.js"></script>
 </body>
 
 </html>	

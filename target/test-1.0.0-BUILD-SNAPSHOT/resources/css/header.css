@@ -1,5 +1,6 @@
 header{
     background-color:#f6f5ef;
+    z-index:10;
 }
 ul{
     padding-inline-start: 13px;
@@ -99,6 +100,7 @@ header{
 .search-icon{
     margin-right:20px;
     height:19px;
+    margin-top:2px !important;
 }
 .search-icon:hover{
     cursor:pointer;
@@ -121,10 +123,14 @@ header{
     display:flex;
 }
 .search{
-    height:13px;
+    height:16px;
     margin-right:0px;
     border:none;
-    margin-top:7px;
+    margin-top:4px;
+    padding-bottom:2px;
+}
+.search::placeholder{
+    font-size:14px;
 }
 .search-icon{
     margin-right:5px;

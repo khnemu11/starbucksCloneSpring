@@ -1,6 +1,6 @@
 .container-wrapper{
 	background-image : url("../img/login_bg.jpg");
-	height:600px;
+	height:650px;
 	background-attachment: fixed;
 	background-size : cover;
 }
@@ -19,13 +19,7 @@
     justify-content:end;
     padding-top:50px;
 }
-.submit{
-    background-color:#c69214;
-    width:110px;
-}
-.submit:hover{
-    background-color: #47360b;
-}
+
 .btn{
      border:none !important;   
 }
@@ -38,13 +32,13 @@
     font-size:13px;
 }
 .submit:visited{
-    background-color: #c69214 !important;
+    background-color: #006633 !important;
 }
 .submit:active{
-    background-color: #c69214 !important;
+    background-color: #006633 !important;
 }
 .submit:focus{
-    background-color: #47360b !important;
+    background-color: #006633 !important;
 }
 h3{
   font: normal 17px Avenir; 
@@ -68,9 +62,106 @@ h2{
 }
 .login-top{
 	display:flex;
+	justify-content:center;
+	color:grey;
+	padding:25px;
+	border-bottom:1px solid  #d3d3d3;
 }
 .password-wrapper,.passwordCheck-wrapper{
 	display:flex;
 	flex-direction:column;
 }
+.welcome{
+	color:green;
+	padding-right:7px;
+	font-weight:200;
+}
 
+.login-top h3{
+	font-weight:200;
+}
+.login-mid{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.login-mid input:nth-child(1){
+	margin-top:20px;
+}
+.login-mid input{
+	width:95%;
+	margin-top:10px;
+	height:40px;
+	border:1px solid #d3d3d3;
+}
+.login-mid input::placeholder{
+	font-size:11px;
+	padding-left:10px;
+}
+.save{
+	display:flex;
+	align-self:start;
+	padding-left:10px;
+	padding-top:15px;
+	margin-bottom:10px;
+}
+.save:hover{
+	cursor:pointer;
+}
+.submit{
+	width:95%;
+	background-color:rgba(0,102,51);
+	border:none;
+	color:white;
+	height:53px;
+	font-size:20px;
+}
+.container h2{
+	padding-bottom:20px;
+	font-weight:normal;
+}
+.submit:hover{
+	background-color : rgba(0,102,51);
+	text-decoration : underline;
+}
+.login-mid p{
+	padding-left:12px;
+	padding-right:12px;
+	color:green;
+	font-size: 14px;
+    line-height: 1;
+	margin-bottom:4px;
+}
+.login-mid p:nth-child(5){
+	padding-top:20px !important;
+}
+.login-bottom button{
+	width:33.3%;
+	padding-right:0px;
+	border:none;
+	border-right:1px solid  #d3d3d3;
+	background-color:white;
+	color:grey;
+}
+.login-bottom{
+	display:flex;
+	padding-bottom:20px;
+	padding-top:20px;	
+}
+.check{
+	background-color: #d3d3d3;
+	color:white;
+	border-radius:20px;
+	height:23px;
+	margin-right:10px;
+}
+.login-bottom button:nth-child(3){
+	border-right:none;
+}
+#buttonDiv{
+	width:95%;
+	display:flex;
+	justify-content:center;
+	padding-top:10px;
+	padding-bottom:10px;
+}
