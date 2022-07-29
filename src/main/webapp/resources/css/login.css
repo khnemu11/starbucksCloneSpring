@@ -19,13 +19,7 @@
     justify-content:end;
     padding-top:50px;
 }
-.submit{
-    background-color:#c69214;
-    width:110px;
-}
-.submit:hover{
-    background-color: #47360b;
-}
+
 .btn{
      border:none !important;   
 }
@@ -38,13 +32,13 @@
     font-size:13px;
 }
 .submit:visited{
-    background-color: #c69214 !important;
+    background-color: #006633 !important;
 }
 .submit:active{
-    background-color: #c69214 !important;
+    background-color: #006633 !important;
 }
 .submit:focus{
-    background-color: #47360b !important;
+    background-color: #006633 !important;
 }
 h3{
   font: normal 17px Avenir; 
@@ -163,4 +157,11 @@ h2{
 }
 .login-bottom button:nth-child(3){
 	border-right:none;
+}
+#buttonDiv{
+	width:95%;
+	display:flex;
+	justify-content:center;
+	padding-top:10px;
+	padding-bottom:10px;
 }

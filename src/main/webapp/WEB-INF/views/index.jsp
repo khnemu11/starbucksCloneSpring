@@ -118,6 +118,7 @@
 	</main>
 	<jsp:include page="./common/footer.jsp"></jsp:include>
 	 <script src="resources/js/menu.js"></script>
+	 <script src="https://apis.google.com/js/api.js"></script>
 </body>
 
 </html>	

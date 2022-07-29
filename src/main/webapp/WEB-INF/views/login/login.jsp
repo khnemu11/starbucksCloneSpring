@@ -6,14 +6,13 @@
 <html>
 <head>
 	<meta charset="UTF-8"  content="text/html;charset=UTF-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests ">
-        <title>Starbucks Korea</title>
-        <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">        
-        <link rel="stylesheet" type="text/css" href="resources/css/login.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-       
+    <title>Starbucks Korea</title>
+    <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">        
+    <link rel="stylesheet" type="text/css" href="resources/css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+ 	<script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>
@@ -33,6 +32,7 @@
 					<h3>아이디 저장</h3>
 				</div>
 				<button class="submit" onclick="login(this.form)">로그인</button>
+        		<div id="buttonDiv"></div> 
 				<p>* 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.</p>
 				<p>* 스타벅스 코리아의 공식 홈페이지는 Internet Explorer 9.0 이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다</p>
 			</div>

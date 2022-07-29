@@ -55,7 +55,8 @@ public class UserBean extends LoginBean{
 	}
 	@Override
 	public String toString() {
-		return "id : "+getId()+" password : "+getPassword()+" name : "+getName();
+		return "id : "+getId()+" password : "+getPassword()+" name : "+getName() + " year : "+getYear() + " month " + getMonth() + 
+				" day : "+ getDay() + " sex : "+ getSex()  + " phone : " + getPhone() + " nickname : " + getNickname();
 		
 	}
 }

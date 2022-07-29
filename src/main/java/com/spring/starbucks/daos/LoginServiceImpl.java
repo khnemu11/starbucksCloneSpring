@@ -31,7 +31,6 @@ public class LoginServiceImpl implements LoginService{
 		}
 		
 		int result = dao.insertUserBean(user);
-		System.out.println("result : "+result);
 		if(result == 1) {
 			System.out.println("register success");
 			return "success";
