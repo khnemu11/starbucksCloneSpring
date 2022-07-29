@@ -38,4 +38,4 @@ http://ksh-starbucks-clone.herokuapp.com/
 4) heroku에서 people api 활용시 30초 이내로 요청이 완료되지 않는 오류발생을 처리하기 위해 1)의 에러 처리 추가
 5) 커피 원두 상세정보 디자인(중반부 부분) 추가
 6) ajax를 활용한 동적 페이지 처리를 위해 해당 jsp에 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 태그 추가
-7) heroku 배포(people api 동작 불가)
+7) heroku 배포(people api 동작 불가/허용된 구글 아이디만 가능(khnemu11@gmail.com, 21700118@handong.ac.kr))
