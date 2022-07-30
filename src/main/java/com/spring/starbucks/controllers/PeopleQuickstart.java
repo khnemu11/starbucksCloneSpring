@@ -12,9 +12,6 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.people.v1.PeopleService;
 import com.google.api.services.people.v1.PeopleServiceScopes;
-import com.google.api.services.people.v1.PeopleService.People;
-import com.google.api.services.people.v1.model.ListConnectionsResponse;
-import com.google.api.services.people.v1.model.Name;
 import com.google.api.services.people.v1.model.Person;
 import com.spring.starbucks.beans.UserBean;
 
@@ -23,7 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
+import java.net.ServerSocket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
@@ -34,7 +31,7 @@ public class PeopleQuickstart {
 	private static final String APPLICATION_NAME = "starbucks clone";
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	private static final String TOKENS_DIRECTORY_PATH = "tokens";
-	private static final String CREDENTIALS_FILE_PATH = "credential.json";
+	private static final String CREDENTIALS_FILE_PATH = "../credential.json";
 	/**
 	 * Global instance of the scopes required by this quickstart. If modifying these
 	 * scopes, delete your previously saved tokens/ folder.
@@ -52,13 +49,13 @@ public class PeopleQuickstart {
 	 */
 	private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
 		// Load client secrets.
+		Path currentPath = Paths.get("");
+        String path = currentPath.toAbsolutePath().toString();
+        System.out.println("현재 작업 경로: " + path);
 		InputStream in = PeopleQuickstart.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
 		if (in == null) {
 			throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
 		}
-		Path currentPath = Paths.get("");
-        String path = currentPath.toAbsolutePath().toString();
-        System.out.println("현재 작업 경로: " + path);
 		File tokenFolder = new File(path+"/"+TOKENS_DIRECTORY_PATH);
 		
 		if(tokenFolder.exists()) {
@@ -72,11 +69,27 @@ public class PeopleQuickstart {
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
 				clientSecrets, SCOPES)
 						.setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH))).build();
-		LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
+		
+		  int port = 1024; 
+		  for(; port<49151; port++) { 
+			  try { ServerSocket ss = new ServerSocket(port); 
+			  System.out.println("avaliable port num : "+port);
+			  ss.close();
+			  break; 
+			  }catch(IOException ee) {
+		
+			  }
+		  }
+		  
+		  System.out.println(port);
+		LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(port).build();
 		return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 	}
 
 	public static UserBean start(String resourceId) throws IOException, GeneralSecurityException {
+		Path currentPath = Paths.get("");
+        String path = currentPath.toAbsolutePath().toString();
+        System.out.println("현재 작업 경로: " + path);
 		// Build a new authorized API client service.
 		final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 		PeopleService service = new PeopleService.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))

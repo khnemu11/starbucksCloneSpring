@@ -54,6 +54,8 @@ public class HomeController {
 		request.setCharacterEncoding("UTF-8");
 		
 		System.out.println(request.getParameter("name_kr"));
+		System.out.println(request.getParameter("weight"));
+		System.out.println(request.getParameter("processing_method"));
 		String directory = request.getServletContext().getRealPath("resources/img/coffee_bean");
 		System.out.println("real path : " + directory);
 		
@@ -69,13 +71,15 @@ public class HomeController {
 		c.setTasting_notes(request.getParameter("tasting_notes"));
 		c.setEnjoy_with(request.getParameter("enjoy_with"));
 		c.setRelative(request.getParameter("relative"));
-		  
+		c.setWeight(request.getParameter("weight"));
+		c.setProcessing_method(request.getParameter("processing_method"));
 		MultipartFile file=request.getFile("file");
 		c.setFile(file);  
-		 
+		System.out.println(c.getWeight());
+		System.out.println(c.getProcessing_method());
 		crudService.save(c,directory);
 		
-		return "coffeeBean/addcoffeeform";
+		return "redirect:index";
 	}
 	@RequestMapping(value = "/editCoffeeBean", method = RequestMethod.POST)
 	public String editCoffeeBean(Locale locale,Model model, MultipartHttpServletRequest request) throws UnsupportedEncodingException {
@@ -97,7 +101,8 @@ public class HomeController {
 		c.setTasting_notes(request.getParameter("tasting_notes"));
 		c.setEnjoy_with(request.getParameter("enjoy_with"));
 		c.setRelative(request.getParameter("relative"));
-		  
+		c.setWeight(request.getParameter("weight"));
+		c.setProcessing_method(request.getParameter("processing_method"));
 		MultipartFile file=request.getFile("file");
 		System.out.println("input file "+file.getOriginalFilename());
 		c.setFile(file);  

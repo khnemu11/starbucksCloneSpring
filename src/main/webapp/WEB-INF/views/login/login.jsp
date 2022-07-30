@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<meta charset="UTF-8"  content="text/html;charset=UTF-8">
     <title>Starbucks Korea</title>
     <link href="resources/img/logo.png" rel="shortcut icon" type="image/x-icon">

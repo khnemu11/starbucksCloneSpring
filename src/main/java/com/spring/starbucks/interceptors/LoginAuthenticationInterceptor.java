@@ -3,12 +3,8 @@ package com.spring.starbucks.interceptors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.springframework.lang.Nullable;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.spring.starbucks.beans.UserBean;
 
 public class LoginAuthenticationInterceptor extends HandlerInterceptorAdapter{
 	@Override
@@ -18,7 +14,7 @@ public class LoginAuthenticationInterceptor extends HandlerInterceptorAdapter{
 				if(session.getAttribute("login")!=null) {
 					return true;
 				}
-				response.sendRedirect("/springStarbucks/loginForm");
+				response.sendRedirect("/loginForm");
 				return false;
 	}
 }

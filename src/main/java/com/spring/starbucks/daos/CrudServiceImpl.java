@@ -1,8 +1,5 @@
 package com.spring.starbucks.daos;
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -30,7 +27,8 @@ public class CrudServiceImpl implements CrudService{
 				System.out.println(c.getName_kr()+" is already exists");
 				return status;
 			}
-			
+			System.out.println("weight : "+c.getWeight());
+			System.out.println("processign mode  : "+c.getProcessing_method());
 			dao.insertCoffeeBean(c);
 			System.out.println("insert "+c.getName_kr()+" finish");
 			

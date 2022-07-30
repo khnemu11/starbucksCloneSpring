@@ -20,7 +20,7 @@
     display:flex;
     justify-content:center;
     max-height:450px;
-    max-width:400px;
+    max-width:350px;
 }
 .coffee-img img{
     display:flex;
@@ -35,6 +35,15 @@
 }
 .name-left{
     width:60%;
+    display:flex;
+    flex-direction:column;
+}
+.name-left div{
+    display:flex;
+
+}
+.name-left div h2,.name-left div p{
+    padding-right:7px;
 }
 .name-right{
     display:flex;
@@ -96,4 +105,105 @@
 }
 .title-home .material-symbols-outlined{
     font-size:15px;
+}
+.context-description-bottom{
+    display:flex;
+    width:100%;
+    padding-top:25px;
+}
+.description-bottom-left{
+    display:flex;
+    flex-direction:column;
+    width:65%;
+}
+.description-bottom-right{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:35%;
+    background-color:rgba(244,244,242);
+    height:fit-content;
+    margin-left:20px;
+}
+.description-bottom-left-bottom{
+     display:flex;
+}
+.design-story img,.tasting-note img{
+    width:95%;
+}
+.design-story, .tasting-note{
+    width:50%;
+   padding:5px;
+}
+.context-top{
+    padding-bottom:25px;
+    border-bottom:2px solid #d3d3d3;
+    
+}
+.description_detail{
+    font-size:13px;
+    padding:5px;
+    padding-bottom:25px;
+}
+.right-block{
+    width:85%;
+    border-bottom:1px solid #d3d3d3;
+}
+.description-bottom-left p{
+    font-size:13px;
+ 
+}
+.context-bottom{
+     background-color:rgba(244,244,242);
+}
+
+.context-bottom-common{
+    display:flex;
+    border-bottom:1px solid #d3d3d3;
+}
+.promotion{
+    width:50%;
+    display:flex;
+}
+.promotion div{
+     width:90%;
+}
+.promotion li{
+    font-size:13px;
+}
+.order{
+    display:flex;
+    width:50%;
+    align-items:center;
+    
+}
+.order img{
+    height:90%;
+    align-self:end;
+}
+.order ul{
+    padding-left:0px;
+    font-size:13px;
+}
+.order-right{
+    margin-left:20px;
+}
+.axis-indicator{
+    width:1px;
+    background-color:#d3d3d3; 
+    height:150px;
+    align-self:center;
+    margin-right:20px;
+}
+.promotion-add{
+    padding-top:20px;
+    transform: scale(1.6);
+    height:40%;
+    color:#808080;
+}
+.promotion-add:hover{
+    cursor:pointer;
+}
+.context-description-bottom{
+    padding-bottom:60px;    
 }

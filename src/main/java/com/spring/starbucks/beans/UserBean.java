@@ -1,6 +1,5 @@
 package com.spring.starbucks.beans;
 
-import org.springframework.web.multipart.MultipartFile;
 
 public class UserBean extends LoginBean{
 	private int year;

@@ -117,3 +117,6 @@ footer{
 .footer-bottom-1st ul li:nth-child(1) a{
     color:green;
 }
+.footer-menu ul :hover{
+    color:white;
+}

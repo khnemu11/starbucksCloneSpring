@@ -19,25 +19,25 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 <main class="container-wrapper">
 <form action="addcoffee" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
-	<div class="container">
+		<div class="container">
 		<div class="container-name">
-				<h2>스타벅스 원두</h2>
-				<h2>${test.name}</h2>
+				<h2>스타벅스 원두 추가</h2>
 		</div>
 			<div class="context-top">
 				<div class="coffee-img">
 					<img src="resources/img/logo.png"/>
 					<input type="file" name="file">
 				</div>
+				
 				<div class="coffee-description">
 					<div class="name">
 						<div class="name-left">
-							<h3>한글 이름</h3><input type="text" name="name_kr"/></h2>
-							<h3>영어 이름</h3><input type="text" name="name_en"/>
+							<h3>한글 이름</h3><input type="text" name="name_kr" /></h2>
+							<h3>영어 이름</h3><input type="text" name="name_en" />
 						</div>
 						<div class="name-right">
 							<select class="form-select type" aria-label="Default select example" name="type">
-								  <option value="blond_roast" selected>원두 종류</option>
+								  <option selected value="blond_roast">원두 종류</option>
 								  <option value="blond_roast">블론드 로스트</option>
 								  <option value="medium_roast">미디엄 로스트</option>
 								  <option value="dark_roast">다크 로스트</option>
@@ -47,11 +47,12 @@
 					</div>
 					<div class="description-sum">
 						<h3>커피 내용 요약</h3>
-						<input type="text" name="description_summary"/>
+						<textarea name="description_summary" ></textarea>
 					</div>
 					
 					<div class="weight">
-						<p>250g</p>
+						<h3>무게 (g)</h3>
+						<input type="text" name="weight" />
 					</div>
 					<div class="more">
 						<img src="resources/img/icon/more_left.jpg"/>
@@ -59,11 +60,43 @@
 					</div>
 				</div>
 			</div>
-			
+			<div class="context-description-bottom">
+				<div class="description-bottom-left">
+					<div class="description-bottom-left-top description_detail">
+						<h3>상세 설명</h3>
+						<textarea name=description_detail ></textarea>
+					</div>
+					<div class="description-bottom-left-bottom">
+						<div class="design-story">
+							<img src="resources/img/productInvestigate_img01.jpg"/>
+							<h4>디자인 스토리</h4>
+							<textarea  name=design_story ></textarea>
+						</div>
+						<div class="tasting-note">
+							<img src="resources/img/productInvestigate_img02.jpg"/>
+							<h4>커피 테이스팅 노트</h4>
+							<textarea  name=coffee_tasting_note></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="description-bottom-right">
+					<div class="right-block tasting_notes">
+						<h4>Tasting Notes</h4>
+						<textarea name=tasting_notes ></textarea>
+					</div>
+					<div class="right-block enjoy_with">
+						<h4>Enjoy With</h4>	
+						<textarea name=enjoy_with ></textarea>
+					</div>
+					<div class="right-block processing_method">
+						<h4>Processing Method</h4>	
+						<textarea name=processing_method></textarea>
+					</div>
+				</div>
+			</div>
 			<div class="context-bottom">
 				<input class="btn btn-primary submit" type="submit" value="추가">
 			</div>
-				
 	</div>
 	</form>
 	

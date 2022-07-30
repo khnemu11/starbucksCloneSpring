@@ -37,6 +37,7 @@
 			<mapping path="/*"/>
 			<exclude-mapping path="/login"/>
 			<exclude-mapping path="/loginGoogle"/>
+			<exclude-mapping path="/loginApiFail"/>
 			<beans:ref bean="loginInfoInterceptor"/>
 		</interceptor>
 	</interceptors>

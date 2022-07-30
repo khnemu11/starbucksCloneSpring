@@ -1,18 +1,11 @@
 package com.spring.starbucks.beans;
 
-import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.springframework.web.multipart.MultipartFile;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 public class Coffee{
 	private Long seq;
 	private String name_kr;
+	private String weight;
 	private String name_en;
 	private String price;
 	private String type;
@@ -23,6 +16,7 @@ public class Coffee{
 	private String tasting_notes;
 	private String enjoy_with;
 	private String relative;
+	private String processing_method;
 	private MultipartFile file;
 	
 	public String getRelative() {
@@ -102,5 +96,17 @@ public class Coffee{
 	}
 	public void setFile(MultipartFile file) {
 		this.file = file;
+	}
+	public String getProcessing_method() {
+		return processing_method;
+	}
+	public void setProcessing_method(String processing_method) {
+		this.processing_method = processing_method;
+	}
+	public String getWeight() {
+		return weight;
+	}
+	public void setWeight(String weight) {
+		this.weight = weight;
 	}
 }

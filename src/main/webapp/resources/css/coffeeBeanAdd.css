@@ -21,7 +21,7 @@
     display:flex;
     flex-direction:column;
     justify-content:space-between;
- 
+ 	
     max-height:450px;
 }
 .coffee-img img{
@@ -142,4 +142,141 @@ h3{
 }
 h2{
     font-weight:600
+}
+.context-description-bottom{
+    display:flex;
+    width:100%;
+    padding-top:25px;
+}
+.description-bottom-left{
+    display:flex;
+    flex-direction:column;
+    width:65%;
+}
+.description-bottom-right{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:35%;
+    background-color:rgba(244,244,242);
+    height:fit-content;
+    margin-left:20px;
+}
+.description-bottom-left-bottom{
+     display:flex;
+}
+.design-story img,.tasting-note img{
+    width:95%;
+}
+.design-story, .tasting-note{
+    width:50%;
+   padding:5px;
+}
+.context-top{
+    padding-bottom:25px;
+    border-bottom:2px solid #d3d3d3;
+    
+}
+.description_detail{
+    font-size:13px;
+    padding:5px;
+    padding-bottom:25px;
+}
+.right-block{
+    width:85%;
+    border-bottom:1px solid #d3d3d3;
+}
+.description-bottom-left p{
+    font-size:13px;
+ 
+}
+
+.context-bottom-common{
+    display:flex;
+    border-bottom:1px solid #d3d3d3;
+}
+.promotion{
+    width:50%;
+    display:flex;
+}
+.promotion div{
+     width:90%;
+}
+.promotion li{
+    font-size:13px;
+}
+.order{
+    display:flex;
+    width:50%;
+    align-items:center;
+    
+}
+.order img{
+    height:90%;
+    align-self:end;
+}
+.order ul{
+    padding-left:0px;
+    font-size:13px;
+}
+.order-right{
+    margin-left:20px;
+}
+
+
+.promotion-add:hover{
+    cursor:pointer;
+}
+.context-description-bottom{
+    padding-bottom:60px;    
+}
+.right-block h4{
+    font-size:18px !important;
+    font-weight:600;
+}
+.description-bottom-left h4{
+    padding-top:10px;
+    font-size:18px !important;
+    font-weight:600;
+}
+input{
+    margin-top:10px;
+}
+textarea{
+    margin-top:10px;
+    resize:none;
+}
+textarea[name=description_detail]{
+    margin-top:10px;
+    width:100%;
+    height:100px;
+}
+textarea[name=design_story],textarea[name=coffee_tasting_note]{
+    margin-top:10px;
+    width:95%;
+    height:100px;
+}
+.right-block textarea{
+    margin-bottom:10px;
+    width:100%;
+}
+.right-block h4{
+    padding-top:10px;
+    margin-bottom:10px;
+}
+.weight{
+    display:flex;
+    align-items:center;
+}
+.weight h3{
+    padding-right:10px;
+}
+.weight input{
+    margin-bottom:10px;
+}
+.description-sum h3{
+    padding-top:10px;
+}
+.more:hover{
+    cursor:pointer;
 }
