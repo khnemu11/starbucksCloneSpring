@@ -153,7 +153,7 @@ http://ksh-starbucks-clone.herokuapp.com/
 
 #### 07/30
 
-1) people api의 heroku 요청 시간 에러로 인한 people api 로직 제거
+1) people api의 heroku 요청 시간 에러로 인한 people api 로직 제거(모든 구글아이디로 로그인 가능)
 2) 커피 원두 정보 추가(무게, processing method)
 3) 커피 원두정보 추가에 따른 수정/추가/삭제 추가
 4) 커피 원두 상세 정보 페이지 디자인 변경
