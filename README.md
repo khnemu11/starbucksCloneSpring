@@ -39,3 +39,13 @@ http://ksh-starbucks-clone.herokuapp.com/
 5) 커피 원두 상세정보 디자인(중반부 부분) 추가
 6) ajax를 활용한 동적 페이지 처리를 위해 해당 jsp에 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 태그 추가
 7) heroku 배포(people api 동작 불가/허용된 구글 아이디만 가능(khnemu11@gmail.com, 21700118@handong.ac.kr))
+
+#### 07/30
+
+1) people api의 heroku 요청 시간 에러로 인한 people api 로직 제거
+2) 커피 원두 정보 추가(무게, processing method)
+3) 커피 원두정보 추가에 따른 수정/추가/삭제 추가
+4) 커피 원두 상세 정보 페이지 디자인 변경
+5) 커피 원두 상세 정보 페이지에서 선택 사항(테이스팅 노트, processing method, enjoy with) 값에 따른 동적 div 표현 방식 추가
+6) 사진 변경 기능 추가
+7) 기타 css 정리 
