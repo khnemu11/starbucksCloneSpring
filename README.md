@@ -6,7 +6,8 @@
 http://ksh-starbucks-clone.herokuapp.com/
 
 
-현재 960px 이상 화면에서만 정상 동작
+모바일 화면 대응완료
+
 
 ### 구현한 동작 기능
 
