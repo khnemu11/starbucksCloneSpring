@@ -1,8 +1,8 @@
 package com.spring.starbucks.controllers;
 
-
 import java.io.UnsupportedEncodingException;
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -29,13 +29,13 @@ public class HomeController {
 	@Resource(name = "crudService")
 	CrudService crudService;
 	int test = 2;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = {"/index","/"}, method = RequestMethod.GET)
+	@RequestMapping(value = { "/index", "/" }, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		List<Coffee> coffeeList = crudService.getAllRecords();
 
@@ -52,15 +52,16 @@ public class HomeController {
 	@RequestMapping(value = "/addcoffee", method = RequestMethod.POST)
 	public String addCoffee(Locale locale, MultipartHttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
-		
+
 		System.out.println(request.getParameter("name_kr"));
 		System.out.println(request.getParameter("weight"));
 		System.out.println(request.getParameter("processing_method"));
 		String directory = request.getServletContext().getRealPath("resources/img/coffee_bean");
 		System.out.println("real path : " + directory);
-		
+		ArrayList<String> list = new ArrayList<>(Arrays.asList("jpg", "png", "jpeg"));
+
 		Coffee c = new Coffee();
-		
+
 		c.setName_kr(request.getParameter("name_kr"));
 		c.setName_en(request.getParameter("name_en"));
 		c.setType(request.getParameter("type"));
@@ -73,23 +74,32 @@ public class HomeController {
 		c.setRelative(request.getParameter("relative"));
 		c.setWeight(request.getParameter("weight"));
 		c.setProcessing_method(request.getParameter("processing_method"));
-		MultipartFile file=request.getFile("file");
-		c.setFile(file);  
-		System.out.println(c.getWeight());
-		System.out.println(c.getProcessing_method());
-		crudService.save(c,directory);
+		MultipartFile file = request.getFile("file");
+		c.setFile(file);
+		String fileName = c.getFile().getOriginalFilename();
+		String suffix = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
+		
+		System.out.println(suffix);
+		
+		if (!list.contains(suffix)) {
+			return "coffeeBean/addcoffeeform";
+		}
+		
+		crudService.save(c, directory);
 		
 		return "redirect:index";
 	}
+
 	@RequestMapping(value = "/editCoffeeBean", method = RequestMethod.POST)
-	public String editCoffeeBean(Locale locale,Model model, MultipartHttpServletRequest request) throws UnsupportedEncodingException {
+	public String editCoffeeBean(Locale locale, Model model, MultipartHttpServletRequest request)
+			throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
 		System.out.println(request.getParameter("name_kr"));
 		String directory = request.getServletContext().getRealPath("resources/img/coffee_bean");
 		System.out.println("real path : " + directory);
-		
+
 		Coffee c = new Coffee();
-		
+
 		c.setSeq(Long.valueOf(request.getParameter("seq")));
 		c.setName_kr(request.getParameter("name_kr"));
 		c.setName_en(request.getParameter("name_en"));
@@ -103,46 +113,46 @@ public class HomeController {
 		c.setRelative(request.getParameter("relative"));
 		c.setWeight(request.getParameter("weight"));
 		c.setProcessing_method(request.getParameter("processing_method"));
-		MultipartFile file=request.getFile("file");
-		System.out.println("input file "+file.getOriginalFilename());
-		c.setFile(file);  
-		 
+		MultipartFile file = request.getFile("file");
+		System.out.println("input file " + file.getOriginalFilename());
+		c.setFile(file);
+
 		System.out.println(file.getOriginalFilename());
-		int status = crudService.edit(c,directory);
-		if(status==0) {
-			return "redirect:coffeeBeanDetail?seq="+c.getSeq();
-		}
-		else {
-			return "redirect:editCoffeeBeanForm?seq="+c.getSeq();
+		int status = crudService.edit(c, directory);
+		if (status == 0) {
+			return "redirect:coffeeBeanDetail?seq=" + c.getSeq();
+		} else {
+			return "redirect:editCoffeeBeanForm?seq=" + c.getSeq();
 		}
 	}
+
 	@RequestMapping(value = "/editCoffeeBeanForm", method = RequestMethod.GET)
 	public String editCoffeeBeanForm(Locale locale, Model model, HttpServletRequest request) {
 		int seq = Integer.valueOf(request.getParameter("seq"));
-		System.out.println("Seq : "+seq);
+		System.out.println("Seq : " + seq);
 		Coffee coffee = crudService.getRecordBySeq(seq);
-		
-		model.addAttribute("coffee",coffee);
-		
+
+		model.addAttribute("coffee", coffee);
+
 		return "coffeeBean/editCoffeeBeanForm";
 	}
-	
-	
+
 	@RequestMapping(value = "/coffeeBeanDetail", method = RequestMethod.GET)
-	public String detailCoffeeBean(Locale locale, Model model,HttpServletRequest request) throws UnsupportedEncodingException {
+	public String detailCoffeeBean(Locale locale, Model model, HttpServletRequest request)
+			throws UnsupportedEncodingException {
 		int seq = Integer.valueOf(request.getParameter("seq"));
-		System.out.println("Seq : "+seq);
+		System.out.println("Seq : " + seq);
 		Coffee coffee = crudService.getRecordBySeq(seq);
-		
-		model.addAttribute("coffee",coffee);
+
+		model.addAttribute("coffee", coffee);
 
 		return "coffeeBean/coffeeBeanDetail";
 	}
-	
+
 	@RequestMapping(value = "/deleteCoffeeBean", method = RequestMethod.GET)
-	public String deleteCoffeeBean(Locale locale, Model model,HttpServletRequest request){
+	public String deleteCoffeeBean(Locale locale, Model model, HttpServletRequest request) {
 		int seq = Integer.valueOf(request.getParameter("seq"));
-		System.out.println("Seq : "+seq);
+		System.out.println("Seq : " + seq);
 		int status = crudService.delete(seq);
 
 		return "redirect:index";
