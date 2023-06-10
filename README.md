@@ -3,7 +3,8 @@
 
 개발환경 : spring, mybatis, heroku, clearDB
 
-http://ksh-starbucks-clone.herokuapp.com/
+~http://ksh-starbucks-clone.herokuapp.com/~
+heroku 무료 배포 지원 중단으로 접속 불가
 
 
 모바일 화면 대응완료
